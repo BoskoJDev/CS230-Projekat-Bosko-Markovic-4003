@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pitanja iz istorije</title>
+        <h:outputStylesheet name="css/stil.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel for="ml" value="Kako se zvao osnivac protenstatizma?"/><br/>
+            <h:inputText id="ml" value="#{takmicar.prviOdgovor}"/><br/><br/>
+        
+            <h:outputLabel for="silni" value="Kako se zvao prvi srpski car?"/><br/>
+            <h:inputText id="silni" value="#{takmicar.drugiOdgovor}"/><br/><br/>
+        
+            <h:outputLabel for="crkva" value="Koje je godine srpska pravoslavna 
+                crkva izborila autokefalnost?"/>
+            <h:selectOneRadio id="crkva" value="#{takmicar.treciOdgovor}">
+                <f:selectItem itemValue="1217" itemLabel="1217"/>
+                <f:selectItem itemValue="1204" itemLabel="1204"/>
+                <f:selectItem itemValue="1296" itemLabel="1296"/>
+                <f:selectItem itemValue="1331" itemLabel="1331"/>
+            </h:selectOneRadio><br/><br/>
+        
+            <h:outputLabel for="ww1" value="Koji je bio uzrok za izbijanje Prvog
+                Svetskog Rata?"/><br/>
+            <h:selectOneRadio id="ww1" value="#{takmicar.cetvrtiOdgovor}">
+                <f:selectItem itemValue="ubistvo" itemLabel="Ubistvo Franca Ferdinanda"/>
+                <f:selectItem itemValue="ultranacionalizam" itemLabel="Ultranacionalisticka 
+                    retorika evropskih monarhija"/>
+                <f:selectItem itemValue="podela" itemLabel="Zelja za novom podelom sveta"/>
+            </h:selectOneRadio><br/><br/>
+        
+            <h:outputLabel for="marica" value="Kada se desila bitka na Marici?"/><br/>
+            <h:inputText id="marica" value="#{takmicar.petiOdgovor}"/><br/><br/>
+        
+            <h:commandButton value="Potvrdi" action="#{takmicarController.navigacijaZaProveru(takmicar)}"/>
+        </h:form>
+    </h:body>
+</html>

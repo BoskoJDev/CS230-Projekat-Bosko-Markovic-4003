@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTakmicarTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_ime}"/>
+                    <h:outputText value="#{takmicarController.selected.ime}" title="#{bundle.ViewTakmicarTitle_ime}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_oblast}"/>
+                    <h:outputText value="#{takmicarController.selected.oblast}" title="#{bundle.ViewTakmicarTitle_oblast}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_poeni}"/>
+                    <h:outputText value="#{takmicarController.selected.poeni}" title="#{bundle.ViewTakmicarTitle_poeni}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_sifra}"/>
+                    <h:outputText value="#{takmicarController.selected.sifra}" title="#{bundle.ViewTakmicarTitle_sifra}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_prviOdgovor}"/>
+                    <h:outputText value="#{takmicarController.selected.prviOdgovor}" title="#{bundle.ViewTakmicarTitle_prviOdgovor}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_drugiOdgovor}"/>
+                    <h:outputText value="#{takmicarController.selected.drugiOdgovor}" title="#{bundle.ViewTakmicarTitle_drugiOdgovor}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_treciOdgovor}"/>
+                    <h:outputText value="#{takmicarController.selected.treciOdgovor}" title="#{bundle.ViewTakmicarTitle_treciOdgovor}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_cetvrtiOdgovor}"/>
+                    <h:outputText value="#{takmicarController.selected.cetvrtiOdgovor}" title="#{bundle.ViewTakmicarTitle_cetvrtiOdgovor}"/>
+                    <h:outputText value="#{bundle.ViewTakmicarLabel_petiOdgovor}"/>
+                    <h:outputText value="#{takmicarController.selected.petiOdgovor}" title="#{bundle.ViewTakmicarTitle_petiOdgovor}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{takmicarController.destroyAndView}" value="#{bundle.ViewTakmicarDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTakmicarEditLink}"/>
+                <br />
+                <h:commandLink action="#{takmicarController.prepareCreate}" value="#{bundle.ViewTakmicarCreateLink}" />
+                <br />
+                <h:commandLink action="#{takmicarController.prepareList}" value="#{bundle.ViewTakmicarShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTakmicarIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pitanja iz geografije</title>
+        <h:outputStylesheet name="css/stil.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel for="ekumena"
+                value="Kako se naziva naseljeni deo Zemljine povrsine?"/><br/>
+            <h:inputText id="ekumena" value="#{takmicar.prviOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="pojasevi" value="Koliko klimatskih pojaseva Zemlja ima?"/>
+            <h:selectOneRadio id="pojasevi" value="#{takmicar.drugiOdgovor}">
+                <f:selectItem itemValue="3" itemLabel="3"/>
+                <f:selectItem itemValue="7" itemLabel="7"/>
+                <f:selectItem itemValue="5" itemLabel="5"/>
+                <f:selectItem itemValue="1" itemLabel="1"/>
+            </h:selectOneRadio><br/>
+            
+            <h:outputLabel for="ekvator" value="Kako se naziva zamisljena linija 
+                koja deli Zemlju na dva dela, pritom opisujuci je na jednakoj
+                udaljenosti od polova?"/><br/>
+            <h:inputText id="ekvator" value="#{takmicar.treciOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="erozija" value="Kako se naziva proces raspada i 
+                susenja zemljista?"/><br/>
+            <h:inputText id="erozija" value="#{takmicar.cetvrtiOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="vojvodina" value="Preko koje nase pokrajine se 
+                nekada prostiralo Panonsko more?"/><br/>
+            <h:inputText id="vojvodina" value="#{takmicar.petiOdgovor}"/><br/><br/>
+            
+            <h:commandButton value="Potvrdi" action="#{takmicarController.navigacijaZaProveru(takmicar)}"/>
+        </h:form>
+    </h:body>
+</html>

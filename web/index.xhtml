@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Prijava</title>
+        <h:outputStylesheet name="css/stil.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel for="ime" value="Unesite ime: "/>
+            <h:inputText id="ime" value="#{takmicar.ime}" style="margin: 0em 0em 1.0em 0.25em">
+                <f:validator validatorId="validNalog"/>
+            </h:inputText>
+            <h:message for="ime" style="color: #e33b06"/><br/>
+
+            <h:outputLabel for="sifra" value="Unesite sifru: "/>
+            <h:inputText id="sifra" value="#{takmicar.sifra}">
+                <f:validator validatorId="validSifra"/>
+            </h:inputText>
+            <h:message for="sifra" style="color: #e33b06"/><br/><br/>
+
+            <h:commandButton id="nastavi" value="Nastavi" style="margin: 0em 0em 1em 0.5em"
+                action="#{validatorNaloga.setKontroler(takmicarController, takmicar)}"/>
+        </h:form>
+
+        <h:form>
+            <h:commandButton style="margin: 0em 0em 1em 0.5em" value="Prijavi se"
+                action="takmicar/Create"/>
+        </h:form>
+    </h:body>
+</html>

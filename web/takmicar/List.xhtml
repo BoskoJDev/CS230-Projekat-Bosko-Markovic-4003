@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Lista registrovanih takmicara"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTakmicarEmpty}" rendered="#{takmicarController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{takmicarController.items.rowCount > 0}">
+                    <h:commandLink action="#{takmicarController.previous}" value="#{bundle.Previous} #{takmicarController.pagination.pageSize}" rendered="#{takmicarController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{takmicarController.next}" value="#{bundle.Next} #{takmicarController.pagination.pageSize}" rendered="#{takmicarController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{takmicarController.items}" var="item" border="2" cellpadding="2"
+                        cellspacing="0" rules="all" style="background: #eff5fa">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTakmicarTitle_ime}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ime}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTakmicarTitle_poeni}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.poeni}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <br />
+                <h:link outcome="/index" value="Ponovo pokreni kviz"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

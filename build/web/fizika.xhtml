@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pitanja iz fizike</title>
+        <h:outputStylesheet name="css/stil.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel for="duzina" value="Koja je merna jedinica za duzinu?"/><br/>
+            <h:inputText id="duzina" value="#{takmicar.prviOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="njutn" value="Koja je definicija Drugog Njutnovog 
+                Zakona?"/><br/>
+            <h:selectOneRadio id="njutn" value="#{takmicar.drugiOdgovor}">
+                <f:selectItem itemValue="prvi" itemLabel="Svako telo ostaje u stanju 
+                    mirovanja ili ravnomernog pravolinijskog kretanja sve dok ga 
+                    delovanje drugog tela ne primora da to stanje promeni."/>
+                <f:selectItem itemValue="drugi" itemLabel="Svaka sila koja deluje 
+                    na telo jednaka je proizvodu mase i ubrzanja tela"/>
+                <f:selectItem itemValue="treci" itemLabel="Svaka sila akcije ima 
+                    svoju silu reakcije"/>
+            </h:selectOneRadio><br/><br/>
+            
+            <h:outputLabel for="gravity" value="Koliko u m/s^2 iznosi sila gravitacije?"/><br/>
+            <h:inputText id="gravity" value="#{takmicar.treciOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="daNe" value="Da li magneti istih polova mogu da 
+                se privlace?"/>
+            <h:selectBooleanCheckbox id="daNe" label="Cekirajte ako mislite da je 
+                gorenavedeno tacno." value="#{takmicar.cetvrtiOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="proces" value="Termodinamički proces pri kome se 
+                zapremina održava konstantnom naziva se:"/>
+            <h:selectOneRadio value="#{takmicar.petiOdgovor}">
+                <f:selectItem itemValue="izotermno" itemLabel="Izotermni proces"/>
+                <f:selectItem itemValue="izohorno" itemLabel="Izohorni proces"/>
+                <f:selectItem itemValue="izobarno" itemLabel="Izobarni proces"/>
+            </h:selectOneRadio><br/><br/>
+            
+            <h:commandButton value="Potvrdi" action="#{takmicarController.navigacijaZaProveru(takmicar)}"/>
+        </h:form>
+    </h:body>
+</html>

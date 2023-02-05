@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Pitanja iz biologije</title>
+        <h:outputStylesheet name="css/stil.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputLabel for="ameba" value="Kako se naziva tip celije koji moze 
+                da menja svoj oblik?"/><br/>
+            <h:inputText id="ameba" value="#{takmicar.prviOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="uvo" value="Koji deo ljudskog tela sadrzi najmanje
+                kostiju?"/><br/>
+            <h:inputText id="uvo" value="#{takmicar.drugiOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="evolucija" value="Ko je postavio teoriju evolucije?"/><br/>
+            <h:inputText id="evolucija" value="#{takmicar.treciOdgovor}"/><br/><br/>
+            
+            <h:outputLabel for="sastojak" value="Sta je od ponudjenog glavni 
+                sastojak hemoglobina?"/>
+            <h:selectOneRadio id="sastojak" value="#{takmicar.cetvrtiOdgovor}">
+                <f:selectItem itemValue="cink" itemLabel="Cink"/>
+                <f:selectItem itemValue="kalcijum" itemLabel="Kalcijum"/>
+                <f:selectItem itemValue="gvozdje" itemLabel="Gvozdje"/>
+            </h:selectOneRadio><br/><br/>
+            
+            <h:outputLabel for="biljka" value="Sta je od ponudjenog glavni organ 
+                za proizvodnju hrane kod biljke?"/>
+            <h:selectOneRadio id="biljka" value="#{takmicar.petiOdgovor}">
+                <f:selectItem itemValue="koren" itemLabel="Koren"/>
+                <f:selectItem itemValue="list" itemLabel="List"/>
+                <f:selectItem itemValue="stabljika" itemLabel="Stabljika"/>
+            </h:selectOneRadio><br/><br/>
+            
+            <h:commandButton value="Potvrdi" action="#{takmicarController.navigacijaZaProveru(takmicar)}"/>
+        </h:form>
+    </h:body>
+</html>

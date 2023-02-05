@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTakmicarTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_ime}" for="ime" />
+                    <h:inputText id="ime" value="#{takmicarController.selected.ime}" title="#{bundle.EditTakmicarTitle_ime}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_oblast}" for="oblast" />
+                    <h:inputText id="oblast" value="#{takmicarController.selected.oblast}" title="#{bundle.EditTakmicarTitle_oblast}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_poeni}" for="poeni" />
+                    <h:inputText id="poeni" value="#{takmicarController.selected.poeni}" title="#{bundle.EditTakmicarTitle_poeni}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_sifra}" for="sifra" />
+                    <h:inputText id="sifra" value="#{takmicarController.selected.sifra}" title="#{bundle.EditTakmicarTitle_sifra}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_prviOdgovor}" for="prviOdgovor" />
+                    <h:inputText id="prviOdgovor" value="#{takmicarController.selected.prviOdgovor}" title="#{bundle.EditTakmicarTitle_prviOdgovor}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_drugiOdgovor}" for="drugiOdgovor" />
+                    <h:inputText id="drugiOdgovor" value="#{takmicarController.selected.drugiOdgovor}" title="#{bundle.EditTakmicarTitle_drugiOdgovor}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_treciOdgovor}" for="treciOdgovor" />
+                    <h:inputText id="treciOdgovor" value="#{takmicarController.selected.treciOdgovor}" title="#{bundle.EditTakmicarTitle_treciOdgovor}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_cetvrtiOdgovor}" for="cetvrtiOdgovor" />
+                    <h:inputText id="cetvrtiOdgovor" value="#{takmicarController.selected.cetvrtiOdgovor}" title="#{bundle.EditTakmicarTitle_cetvrtiOdgovor}" />
+                    <h:outputLabel value="#{bundle.EditTakmicarLabel_petiOdgovor}" for="petiOdgovor" />
+                    <h:inputText id="petiOdgovor" value="#{takmicarController.selected.petiOdgovor}" title="#{bundle.EditTakmicarTitle_petiOdgovor}" />
+                </h:panelGrid>
+                <h:commandLink action="#{takmicarController.update}" value="#{bundle.EditTakmicarSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTakmicarViewLink}"/>
+                <br />
+                <h:commandLink action="#{takmicarController.prepareList}" value="#{bundle.EditTakmicarShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTakmicarIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
